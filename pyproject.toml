@@ -10,6 +10,7 @@ python = "^3.8"
 fastapi = "^0.103.2"
 uvicorn = "^0.23.2"
 pydantic = "^2.4.2"
+shed = "^2023.6.1"
 
 
 [tool.poetry.group.dev.dependencies]

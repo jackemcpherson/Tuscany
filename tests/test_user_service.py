@@ -1,9 +1,6 @@
-import httpx
-import pytest
-from httpx import AsyncClient
-from fastapi.testclient import TestClient
-
 import sys
+
+from fastapi.testclient import TestClient
 
 sys.path.append("..")
 
@@ -11,12 +8,13 @@ from user_service.main import app  # Adjust the import path accordingly
 
 client = TestClient(app)
 
+
 def test_user_crud():
     # Step 1: Create user
     payload = {"username": "TestUser", "email": "Test@User.com"}
     response = client.post("/users/", json=payload)
     assert response.status_code == 200
-    user_id = response.json()['user_id']
+    user_id = response.json()["user_id"]
     assert user_id is not None
 
     # Step 2: Retrieve and check user
